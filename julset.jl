@@ -190,11 +190,11 @@ end
 # TODO: Partition
 
 
-function is_function(R)
+function is_function(f)
 	"""Returns true if the relation R is function by the vertical line test"""
 	
-	for e in R
-		for p in R
+	for e in f
+		for p in f
 			if (e[1]==p[1])&&(p != e)
 				return false
 			end
@@ -202,6 +202,22 @@ function is_function(R)
 	end
 	
 	return true
+end
+
+
+function is_constant_function(f)
+	"""Tests if the function is constant for all values in the domain"""
+	
+	
+	C = f[1][2]
+	
+	for a in f
+		if a[2]!=C
+			return false
+		end
+	end
+	
+	return is_function(f)
 end
 
 
@@ -291,13 +307,23 @@ function julset_test()
 	# TODO: Partition testing
 	
 	# is_function
-	R = [[-2,4],[-1,1],[0,0],[1,1],[2,4]]
-	println("R = ", R)
-	println("is_function(R) = ", is_function(R))
-	R = [[-2,4],[-1,1],[0,0],[1,1],[2,4],[0,4]]
-	println("R = ", R)
-	println("is_function(R) = ", is_function(R))
+	println()
+	f = [[-2,4],[-1,1],[0,0],[1,1],[2,4]]
+	println("f = ", f)
+	println("is_function(f) = ", is_function(f))
+	f = [[-2,4],[-1,1],[0,0],[1,1],[2,4],[0,4]]
+	println("f = ", f)
+	println("is_function(f) = ", is_function(f))
 	
+	
+	# is_constant_function
+	println()
+	f = [[0,2],[1,2],[2,2],[3,2],[4,2]]
+	println("f = ", f)
+	println("is_constant_function(f) = ", is_constant_function(f))
+	f = [[-2,4],[-1,1],[0,0],[1,1],[2,4]]
+	println("f = ", f)
+	println("is_constant_function(f) = ", is_constant_function(f))
 	
 end
 	

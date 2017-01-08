@@ -54,3 +54,6 @@ Runs example tests for all module functions
 
 # is_function
 Returns true if the relation R is function by the vertical line test
+
+# is_constant_function
+Tests if the function is constant for all values in the domain
