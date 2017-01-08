@@ -51,3 +51,6 @@ Returns all the equivalence classes of a set A by a relation R
 
 # julset_test
 Runs example tests for all module functions
+
+# is_function
+Returns true if the relation R is function by the vertical line test

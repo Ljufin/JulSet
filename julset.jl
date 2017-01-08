@@ -66,7 +66,7 @@ function get_inverse(R)
 	inverse = []
 	
 	for e in R
-		setpush!(inverse, reverse(r))
+		setpush!(inverse, reverse(e))
 	end
 	
 	return inverse
@@ -190,6 +190,21 @@ end
 # TODO: Partition
 
 
+function is_function(R)
+	"""Returns true if the relation R is function by the vertical line test"""
+	
+	for e in R
+		for p in R
+			if (e[1]==p[1])&&(p != e)
+				return false
+			end
+		end
+	end
+	
+	return true
+end
+
+
 function julset_test()
 	"""Runs example tests for all module functions"""
 	
@@ -274,6 +289,14 @@ function julset_test()
 	println("Quotient set = " , quotient_set(R,A))
 	
 	# TODO: Partition testing
+	
+	# is_function
+	R = [[-2,4],[-1,1],[0,0],[1,1],[2,4]]
+	println("R = ", R)
+	println("is_function(R) = ", is_function(R))
+	R = [[-2,4],[-1,1],[0,0],[1,1],[2,4],[0,4]]
+	println("R = ", R)
+	println("is_function(R) = ", is_function(R))
 	
 	
 end
