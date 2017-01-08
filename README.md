@@ -1,8 +1,8 @@
 # JulSet
 This module provides several functions for set theory.
-An important thing to note is that the sets used here are not the standard set as
-defined by Julia. This modules uses the standard Julia arrays, mostly for the ability
-to use nested sets, a feature that the set type doesn't support.
+An important thing to note is that the sets used here are not the set type
+defined by Julia. This modules uses one-dimensional Julia arrays, mostly for the ability
+to use nested sets, a feature that the set type does not support.
 A list of functions are as follows:
 
 # setpush!
@@ -10,10 +10,10 @@ A special function for adding elements to arrays that treats them as sets so tha
 won't result in repeated elements
 
 # productset
-Returns the product set (or power set) as defined by: AxB = {<a,b>: aeA, beB}
+Returns the product set (or power set) as defined by: AxB = {(a,b): aeA, beB}
 
 # is_relation
-Returns true is R is a binary relation from A to B
+Returns true if R is a binary relation from A to B
 
 # get_domain
 Returns the domain of R as a set
@@ -25,16 +25,16 @@ Returns the range of R as a set
 Returns the inverse of R as a set
 
 # identity_relation
-Returns the identity set of A where {<a,a>: aeA}
+Returns the identity set of A where {(a,a): aeA}
 
 # is_reflexive
-Returns true if for every aeA, <a,a>eR, R is a subset of AxA
+Returns true if for every aeA, (a,a)eR, R is a subset of AxA
 
 # is_symmetric
-Returns true if <a,b>eR, then <b,a>eR, R is a subset of AxA
+Returns true if (a,b)eR, then (b,a)eR, R is a subset of AxA
 
 # is_transitive
-Returns true if <a,b>eR and <b,c>eR, then <a,c>eR, R is a subset of AxA
+Returns true if (a,b)eR and (b,c)eR, then (a,c)eR, R is a subset of AxA
 
 # is_equivalence_relation
 Returns true if the relation meets the following 3 axioms:
