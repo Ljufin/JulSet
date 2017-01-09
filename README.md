@@ -57,3 +57,6 @@ Returns true if the relation R is function by the vertical line test
 
 # is_constant_function
 Tests if the function is constant for all values in the domain
+
+# is_onetoone
+Returns true if the function passes the horizontal line test

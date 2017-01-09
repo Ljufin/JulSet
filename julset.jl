@@ -14,7 +14,7 @@ end
 
 
 function productset(A,B)
-	"""Returns the product set (or power set) as defined by: AxB = {<a,b>: aeA, beB}"""
+	"""Returns the product set as defined by: AxB = {<a,b>: aeA, beB}"""
 	
 	ps = []
 	
@@ -26,6 +26,9 @@ function productset(A,B)
 	
 	return ps
 end
+
+
+# TODO: powerset
 
 
 function is_relation(R, A, B)
@@ -220,6 +223,23 @@ function is_constant_function(f)
 	return is_function(f)
 end
 
+# TODO: composite functions
+
+
+function is_onetoone(f)
+	"""Returns true if the function passes the horizontal line test"""
+	
+	for e in f
+		for p in f
+			if (e[2]==p[2])&&(p != e)
+				return false
+			end
+		end
+	end
+	
+	return is_function(f)
+end
+
 
 function julset_test()
 	"""Runs example tests for all module functions"""
@@ -324,6 +344,15 @@ function julset_test()
 	f = [[-2,4],[-1,1],[0,0],[1,1],[2,4]]
 	println("f = ", f)
 	println("is_constant_function(f) = ", is_constant_function(f))
+	
+	# is_onetoone
+	println()
+	f = [[0,0],[1,1],[2,2],[3,3]]
+	println("f = ", f)
+	println("is_onetoone(f) = ", is_onetoone(f))
+	f = [[0,2],[1,2],[2,2],[3,2],[4,2]]
+	println("f = ", f)
+	println("is_onetoone(f) = ", is_onetoone(f))
 	
 end
 	
