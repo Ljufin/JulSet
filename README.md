@@ -12,6 +12,12 @@ won't result in repeated elements
 # productset
 Returns the product set (or power set) as defined by: AxB = {(a,b): aeA, beB}
 
+# union_to_subset
+Adds the element e to each subset in the set T. This is used in the powerset algorithm
+
+# powerset
+Returns the set of all subsets of S. Recursive algorithm
+
 # is_relation
 Returns true if R is a binary relation from A to B
 

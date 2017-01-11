@@ -28,7 +28,28 @@ function productset(A,B)
 end
 
 
-# TODO: powerset
+function union_to_subset(e, T)
+	"""Adds the element e to each subset in the set T. This is used in the powerset algorithm"""
+	
+	for s in T
+		setpush!(s, e)
+	end
+	
+	return T
+end
+
+
+function powerset(S)
+	"""Returns the set of all subsets of S. Recursive algorithm"""
+	
+	if S == []
+		return [[]]
+	else
+		e = S[length(S)]
+		T = setdiff(S, [e])
+		return union(powerset(T), union_to_subset(e, powerset(T)))
+	end
+end	
 
 
 function is_relation(R, A, B)
@@ -251,6 +272,12 @@ function julset_test()
 	println("A = ", [1,2,3], " B = ", B)
 	println("AxB = ", productset(A,B))
 	
+	# powerset
+	println()
+	A = [1,2,3]
+	println("A = ", A)
+	println("Powerset(A) = ", powerset(A))
+	
 	println()
 	# is_relation
 	"""R = [['a',2],['b',3]]
@@ -353,6 +380,7 @@ function julset_test()
 	f = [[0,2],[1,2],[2,2],[3,2],[4,2]]
 	println("f = ", f)
 	println("is_onetoone(f) = ", is_onetoone(f))
+	
 	
 end
 	
