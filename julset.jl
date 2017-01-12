@@ -211,9 +211,6 @@ function quotient_set(R,A)
 end
 
 
-# TODO: Partition
-
-
 function is_function(f)
 	"""Returns true if the relation R is function by the vertical line test"""
 	
@@ -243,8 +240,6 @@ function is_constant_function(f)
 	
 	return is_function(f)
 end
-
-# TODO: composite functions
 
 
 function is_onetoone(f)
@@ -351,7 +346,6 @@ function julset_test()
 	println("R = ", R, " A = ", A)
 	println("Quotient set = " , quotient_set(R,A))
 	
-	# TODO: Partition testing
 	
 	# is_function
 	println()
