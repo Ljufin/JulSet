@@ -1,5 +1,4 @@
 # To-do list:
-Implement julset.jl as a module instead of an include file.
 
 Add partition checking method and tests.
 

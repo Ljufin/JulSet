@@ -256,5 +256,26 @@ module JulSet
 		
 		return is_function(f)
 	end
+	
+	
+	# exports
+	export setpush!
+	export productset
+	export union_to_subset
+	export powerset
+	export is_relation
+	export get_domain
+	export get_range
+	export get_inverse
+	export identity_relation
+	export is_reflexive
+	export is_symmetric
+	export is_transitive
+	export is_equivalence_relation
+	export equivalence_class
+	export quotient_set
+	export is_function
+	export is_constant_function
+	export is_onetoone
 
 end
